@@ -25,17 +25,19 @@ get '/' do
   
   array = []
   
+  # examine first 5 items (0..4)
   @@photosets[0..4].each do |set|
     
     # get the primary photo for thumbnail and photoset url
     primary = flickr.photos.getInfo(:photo_id => set.primary)
     
     # push sets to an array
-    array << {  :title => set.title, 
-                :description => set.description,
-                :count => set.photos,
-                :thumbnail_url => FlickRaw.url_m(primary),
-                :photoset_link_url => FlickRaw.url_photoset(primary) 
+    array << {  
+      :title => set.title, 
+      :description => set.description,
+      :count => set.photos,
+      :thumbnail_url => FlickRaw.url_m(primary),
+      :photoset_link_url => FlickRaw.url_photoset(primary) 
     }
   end
   
