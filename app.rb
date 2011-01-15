@@ -25,6 +25,7 @@ get '/' do
   
   array = []
   
+  # examine first 5 items (0..4)
   @@photosets[0..4].each do |set|
     
     # get the primary photo for thumbnail and photoset url
