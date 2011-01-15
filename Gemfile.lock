@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/hanklords/flickraw.git
+  revision: 71bdea590d8ec99138c86870d2c196d954d1ce1e
+  specs:
+    flickraw (0.8.3)
+      json (>= 1.1.1)
+
+GIT
   remote: git://github.com/sinatra/sinatra.git
   revision: a28ed5076caefd09711d2938da03f2fa105d6869
   specs:
@@ -9,8 +16,6 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    flickraw (0.8.3)
-      json (>= 1.1.1)
     json (1.4.6)
     rack (1.2.1)
     tilt (1.2.1)
@@ -20,6 +25,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  flickraw
+  flickraw!
   json
   sinatra!

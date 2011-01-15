@@ -1,3 +1,3 @@
-require "turnboat"
+require "app"
 
 run Sinatra::Application
