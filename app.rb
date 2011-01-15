@@ -30,12 +30,15 @@ get '/' do
     # get the primary photo for thumbnail and photoset url
     primary = flickr.photos.getInfo(:photo_id => set.primary)
     
+    # push sets to an array
     array << {  :title => set.title, 
                 :description => set.description,
                 :count => set.photos,
                 :thumbnail_url => FlickRaw.url_m(primary),
-                :photoset_link_url => FlickRaw.url_photoset(primary) }.to_json
+                :photoset_link_url => FlickRaw.url_photoset(primary) 
+    }
   end
   
+  # return array as json object
   array.to_json
 end
