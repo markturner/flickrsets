@@ -9,9 +9,6 @@ require 'json'
 configure do  
   # Set API key
   FlickRaw.api_key="8e111f079960796424689d29fc4c5461"
-  
-  # set last update time
-  @@last_updated = Time.now
 
   # get my user id
   @@user_id = flickr.people.findByUsername(:username => 'Mark Turner').id
