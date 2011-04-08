@@ -19,6 +19,7 @@ configure do
 end
 
 get '/' do
+  headers['Cache-Control'] = 'public, max-age=21600' # Cache for six hours
   
   array = []
   
