@@ -5,6 +5,7 @@ Bundler.setup
 require 'sinatra'
 require 'flickraw'
 require 'json'
+require 'cgi'
 
 configure do  
   # Set API key
@@ -31,8 +32,8 @@ get '/' do
     
     # push sets to an array
     array << {  
-      :title => set.title, 
-      :description => set.description,
+      :title => CGI.escapeHTML(set.title), 
+      :description => CGI.escapeHTML(set.description),
       :count => set.photos,
       :thumbnail_url => FlickRaw.url_m(primary),
       :photoset_link_url => FlickRaw.url_photoset(primary) 
